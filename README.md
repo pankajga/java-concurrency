@@ -12,11 +12,12 @@ The execute() method is void and doesn't give any possibility to get the result 
 executorService.execute(runnableTask);
 submit() submits a Callable or a Runnable task to an ExecutorService and returns a result of type Future:
 
-Future<String> future = 
-  executorService.submit(callableTask);
+Future<String> future = executorService.submit(callableTask);
+
 invokeAny() assigns a collection of tasks to an ExecutorService, causing each to run, and returns the result of a successful execution of one task (if there was a successful execution):
 
 String result = executorService.invokeAny(callableTasks);
+
 invokeAll() assigns a collection of tasks to an ExecutorService, causing each to run, and returns the result of all task executions in the form of a list of objects of type Future:
 
 List<Future<String>> futures = executorService.invokeAll(callableTasks);
@@ -48,4 +49,3 @@ boolean canceled = future.cancel(true);
 boolean isCancelled = future.isCancelled();
 
 Reference: https://www.baeldung.com/java-executor-service-tutorial
-           https://www.geeksforgeeks.org/difference-between-callable-and-runnable-in-java/
