@@ -12,6 +12,8 @@ The execute() method is void and doesn't give any possibility to get the result 
 executorService.execute(runnableTask);
 submit() submits a Callable or a Runnable task to an ExecutorService and returns a result of type Future:
 
+submit vs execute -> submit takes callable as input, whereas execute takes runnable as input, thats the reason submit returns Future value.
+
 Future<String> future = executorService.submit(callableTask);
 
 invokeAny() assigns a collection of tasks to an ExecutorService, causing each to run, and returns the result of a successful execution of one task (if there was a successful execution):
